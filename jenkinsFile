@@ -1,10 +1,36 @@
 pipeline {
     agent any
+    
     stages {
-        stage('Hello') {
+        stage('Checkout') {
             steps {
-                echo 'Hello World'
+                // Checkout your Terraform code from version control (e.g., Git)
+                // Replace the repository URL and credentials with your own
+                git 'https://github.com/Zankruti2202/JenkinsFirst.git'
+            }
+        }
+        
+        stage('Terraform Init') {
+            steps {
+                // Run 'terraform init' to initialize the working directory
+                sh 'terraform init'
+            }
+        }
+        
+        stage('Terraform Plan') {
+            steps {
+                // Run 'terraform plan' to generate an execution plan
+                sh 'terraform plan'
+            }
+        }
+        
+        stage('Terraform Apply') {
+            steps {
+                // Run 'terraform apply' to create or update infrastructure
+                // Use the '-auto-approve' flag to skip confirmation prompts
+                sh 'terraform apply -auto-approve'
             }
         }
     }
 }
+
