@@ -19,10 +19,7 @@ resource "aws_instance" "ec2_assignment_terraform" {
   instance_type = "t2.micro"                # Replace with your desired instance type
 }
 
-  tags = {
-    Name = "JenkinsTerraformAssignment"
-  }
-
+  
 output "public_ip" {
   value = aws_instance.ec2_assignment_terraform.public_ip
 }
