@@ -6,7 +6,8 @@ pipeline {
             steps {
                 // Checkout your Terraform code from version control (e.g., Git)
                 // Replace the repository URL and credentials with your own
-                git 'https://github.com/Zankruti2202/JenkinsFirst.git'
+               // git 'https://github.com/Zankruti2202/JenkinsFirst.git'
+               git branch: 'main', url: 'https://github.com/Zankruti2202/JenkinsFirst.git'
             }
         }
         
