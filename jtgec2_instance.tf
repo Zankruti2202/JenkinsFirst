@@ -16,6 +16,7 @@ provider "aws" {
 }
 
 resource "aws_instance" "ec2_assignment_terraform" {
+  ami           = "ami-05842f1afbf311a43"
   instance_type = "t2.micro"                # Replace with your desired instance type
 }
 
