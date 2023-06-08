@@ -17,6 +17,7 @@ provider "aws" {
 
 resource "aws_instance" "ec2_assignment_terraform" {
   instance_type = "t2.micro"                # Replace with your desired instance type
+}
 
   tags = {
     Name = "JenkinsTerraformAssignment"
