@@ -25,6 +25,11 @@ pipeline {
             }
         }
         
+         environment {
+                AWS_ACCESS_KEY_ID     = credentials('ACCESS_ID')
+                AWS_SECRET_ACCESS_KEY = credentials('ACCESS_KEY')
+        }
+        
         stage('Terraform Apply') {
             steps {
                 // Run 'terraform apply' to create or update infrastructure
