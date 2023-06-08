@@ -14,6 +14,8 @@ terraform{
 provider "aws" {
         profile = "default"
         region = "us-east-2"
+        access_key = AWS_ACCESS_KEY
+        secret_key = AWS_SECRET_KEY
 }
 
 resource "aws_instance" "ec2_assignment_terraform" {
